@@ -1,0 +1,19 @@
+<table>
+    <tr>
+        <th>Bill ID</th>
+        <th>Consumer Name</th>
+        <th>Year</th>
+        <th>Month</th>
+        <th>Units Consumed</th>
+        <th>Total Bill</th>
+      </tr>
+    <tr *ngFor="let bill of consumerList">
+        <td>{{bill.billId}}</td>
+        <td>{{bill.consumer.consumerName}}</td>
+        <td>{{bill.year}}</td>
+        <td>{{bill.month}}</td>
+        <td>{{bill.unitsConsumed}}</td>
+        <td>{{bill.totalBill}}</td>
+      </tr>
+</table>
+
