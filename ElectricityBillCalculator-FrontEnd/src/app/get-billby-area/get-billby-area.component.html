@@ -1,10 +1,23 @@
+<form [formGroup]="areaForm" (ngSubmit)="setArea()">
+    <input type="text" placeholder="Enter area" formControlName="area"><br>
+    <button [disabled]="areaForm.invalid">Submit</button>
+</form>
 
-<html>
-    <head>
-        <link rel="stylesheet" href="get-billby-area.component.css">
-    </head>
-
-    <body>
-        <p>get-billby-area works!</p>
-    </body>
-</html>
+<table>
+    <tr>
+        <th>Bill ID</th>
+        <th>Consumer Name</th>
+        <th>Year</th>
+        <th>Month</th>
+        <th>Units Consumed</th>
+        <th>Total Bill</th>
+      </tr>
+    <tr *ngFor="let bill of consumerList">
+        <td>{{bill.billId}}</td>
+        <td>{{bill.consumer.consumerName}}</td>
+        <td>{{bill.year}}</td>
+        <td>{{bill.month}}</td>
+        <td>{{bill.unitsConsumed}}</td>
+        <td>{{bill.totalBill}}</td>
+      </tr>
+</table>

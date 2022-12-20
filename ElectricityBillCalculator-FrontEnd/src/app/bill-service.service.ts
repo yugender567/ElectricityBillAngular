@@ -8,10 +8,6 @@ import { Bill } from './bill';
 })
 export class BillServiceService {
 
-  city:string="";
-  area:string="";
-  year!:number;
-  month!:number;
   email:string="";
 
   constructor(private http:HttpClient) { }
@@ -21,25 +17,25 @@ export class BillServiceService {
     return this.http.get<Bill[]>("http://localhost:8080/consumers");
   }
 
-  getConsumerBillsByCity():Observable<Bill[]> 
+  getConsumerBillsByCity(city:string):Observable<Bill[]> 
   {
     let queryParams = new HttpParams();
-    queryParams = queryParams.append("city",this.city);
+    queryParams = queryParams.append("city",city);
     return this.http.get<Bill[]>("http://localhost:8080/consumers/city", {params:queryParams});
   }
 
-  getConsumerBillsByArea():Observable<Bill[]> 
+  getConsumerBillsByArea(area:string):Observable<Bill[]> 
   {
     let queryParams = new HttpParams();
-    queryParams = queryParams.append("area",this.area);
+    queryParams = queryParams.append("area",area);
     return this.http.get<Bill[]>("http://localhost:8080/consumers/area", {params:queryParams});
   }
 
-  getConsumerBillsByYearAndMonth():Observable<Bill[]> 
+  getConsumerBillsByYearAndMonth(year:number, month:number):Observable<Bill[]> 
   {
     let queryParams = new HttpParams();
-    queryParams = queryParams.append("year",this.year);
-    queryParams = queryParams.append("month",this.month);
+    queryParams = queryParams.append("year",year);
+    queryParams = queryParams.append("month",month);
     return this.http.get<Bill[]>("http://localhost:8080/consumers/date", {params:queryParams});
   }
 

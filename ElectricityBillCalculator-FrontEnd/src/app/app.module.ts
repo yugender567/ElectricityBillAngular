@@ -13,6 +13,7 @@ import { GetBillbyCityComponent } from './get-billby-city/get-billby-city.compon
 import { GetBillbyAreaComponent } from './get-billby-area/get-billby-area.component';
 import { GetBillbyYearComponent } from './get-billby-year/get-billby-year.component';
 import { InsertBillComponent } from './insert-bill/insert-bill.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { InsertBillComponent } from './insert-bill/insert-bill.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

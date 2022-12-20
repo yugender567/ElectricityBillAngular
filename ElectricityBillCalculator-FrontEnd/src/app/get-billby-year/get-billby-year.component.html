@@ -1,9 +1,24 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="get-billby-year.component.css">
-    </head>
-    <body>
-        <p>get-billby-year works!</p>
-    </body>
-</html>
-<p>get-billby-year works!</p>
+<form [formGroup]="dateForm" (ngSubmit)="setYearAndMonth()">
+    <input type="text" placeholder="Enter year" formControlName="year"><br>
+    <input type="text" placeholder="Enter month" formControlName="month"><br>
+    <button [disabled]="dateForm.invalid">Submit</button>
+</form>
+
+<table>
+    <tr>
+        <th>Bill ID</th>
+        <th>Consumer Name</th>
+        <th>Year</th>
+        <th>Month</th>
+        <th>Units Consumed</th>
+        <th>Total Bill</th>
+      </tr>
+    <tr *ngFor="let bill of consumerList">
+        <td>{{bill.billId}}</td>
+        <td>{{bill.consumer.consumerName}}</td>
+        <td>{{bill.year}}</td>
+        <td>{{bill.month}}</td>
+        <td>{{bill.unitsConsumed}}</td>
+        <td>{{bill.totalBill}}</td>
+      </tr>
+</table>
