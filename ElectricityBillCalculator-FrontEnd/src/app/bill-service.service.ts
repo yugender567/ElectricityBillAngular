@@ -51,16 +51,21 @@ export class BillServiceService {
   //   return this.http.post<Consumer>("http://localhost:8080/consumers", loginform.value);
   // }
 
-  addBill(): Observable<Bill>
+  // addBill(): Observable<Bill>
+  // {
+  //   return this.http.post<Bill>("http://localhost:8080/bills", {
+  //     "year":"2022",
+  //     "month":"10",
+  //     "unitsConsumed":"100",
+  //     "consumer":{"consumerId":3,"consumerName":null,"city":null,"area":null,
+  //     "planType":null,
+  //     "password":null,"email":null,"bills":[],"admin":false}
+  //   })
+  // }
+
+  addBill(bill: undefined): Observable<any>
   {
-    return this.http.post<Bill>("http://localhost:8080/bills", {
-      "year":"2022",
-      "month":"10",
-      "unitsConsumed":"100",
-      "consumer":{"consumerId":3,"consumerName":null,"city":null,"area":null,
-      "planType":null,
-      "password":null,"email":null,"bills":[],"admin":false}
-    })
+    return this.http.post<any>("http://localhost:8080/bills", bill);
   }
 
 

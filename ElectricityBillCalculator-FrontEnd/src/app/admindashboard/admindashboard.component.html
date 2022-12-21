@@ -4,15 +4,19 @@
         <link rel="stylesheet" href="admindashboard.component.css">
     </head>
     <body>
-        <button routerLink="/AllBills">All bills</button>
-        <br>
-        <button routerLink="/BillByCity">by city</button>
-        <br>
-        <button routerLink="/BillByArea">by area</button>
-        <br>
-        <button routerLink="/BillByYear">by year month</button>
-        <br>
-        <button routerLink="/InsertBill">insert bill</button>
+        <nav>
+            <ul>
+                <li><a routerLink="/AdminDashboard">Home</a></li>
+                <li><a routerLink="/InsertBill">Insert Bill</a></li>
+                <li class = "dropdown"><a routerLink="/AllBills">Consumer Bill <span>&rsaquo;</span></a>
+                    <ul>
+                        <li><a routerLink="/AllBills">Get All Bills</a></li>
+                        <li><a routerLink="/BillByCity">Get Bill By City</a></li>
+                        <li><a routerLink="/BillByArea">Get Bill By Area</a></li>
+                        <li><a routerLink="/BillByYear">Get Bill By Year</a></li>
+                    </ul>
+            </ul>
+        </nav>
     </body>
 </html>
 

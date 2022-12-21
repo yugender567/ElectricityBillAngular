@@ -3,7 +3,14 @@
         <link rel="stylesheet" href="insert-bill.component.css">
     </head>
     <body>
-        <p>insert-bill works!</p>
+        <form [formGroup]="billForm" (ngSubmit)="setBill()">
+            <input type="text" placeholder="Enter year" formControlName="year"><br>
+            <input type="text" placeholder="Enter month" formControlName="month"><br>
+            <input type="text" placeholder="Enter unitsConsumed" formControlName="unitsConsumed"><br>
+            <input type="text" placeholder="Enter consumerId" formControlName="consumerId"><br>
+            <button [disabled]="billForm.invalid">Submit</button>
+        </form><br>
+        <!-- <span>{{console.log(this.insertBill)}}</span> -->
     </body>
 </html>
-<p>insert-bill works!</p>
+
